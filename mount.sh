@@ -1,7 +1,8 @@
 #!/bin/bash
 cd "$(dirname "$0")"
+DIRNAME="$(basename "${PWD}")"
 
-ROOTDIRS=($(find / -mindepth 1 -maxdepth 1 -type d -or -type l | tr -d '/' | grep -v -e sys -e proc -e dev -e overlayupgrade))
+ROOTDIRS=($(find / -mindepth 1 -maxdepth 1 -type d -or -type l | tr -d '/' | grep -v -e sys -e proc -e dev -e "$DIRNAME"))
 SPECIALDIRS=(mnt work merged upper)
 
 
