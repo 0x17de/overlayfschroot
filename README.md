@@ -11,6 +11,10 @@ The script will mount all directories in the filesystem root (except proc sys de
 These scripts will not protect /dev /proc /sys, as they will be mounted via -R (rebind).
 Tools started in the chroot can still communicate with the outside world.
 
+Since /dev is not protected in any way, an upgrade of grub could for example reinstall the bootloader on the real system!
+
+Avoid mounting directories inside the chroot. This could cause unwanted behavior.
+
 ## Usage
 ```sh
 mv $REPOROOT /overlayfschroot
