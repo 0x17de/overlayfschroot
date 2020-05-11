@@ -20,8 +20,8 @@ Avoid mounting directories inside the chroot. This could cause unwanted behavior
 mv $REPOROOT /overlayfschroot
 cd /overlayfschroot
 ./mount.sh
-# enter the environment
-./chroot.sh (will call mount if not done yet)
+# enter the environment (will call mount.sh if not done yet)
+./chroot.sh
 # unmount all overlayfs mounts and rebinds
 ./umount.sh
 # remove all empty directories (will call umount if not done yet)
